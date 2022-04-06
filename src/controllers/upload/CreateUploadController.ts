@@ -14,7 +14,9 @@ class CreateUploadController {
         const upload = await service.execute({
           name,
           key,
-          url: `${process.env.APP_URL}:${process.env.SERVER_PORT}/uploads/${key}`,
+          url: `${process.env.APP_URL}:${
+            process.env.SERVER_PORT || process.env.PORT
+          }/uploads/${key}`,
           size
         })
 
